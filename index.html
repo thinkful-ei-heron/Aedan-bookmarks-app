@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Aedan's Bookmark App</title>
+</head>
+<body>
+    <header>
+        <h1>My Bookmarks</h1>
+        <form id = 'js-header-form'>
+            <button type="submit" id = 'js-header-form-submit'>+ New <img src="https://www.materialui.co/materialIcons/action/bookmark_white_192x192.png" alt="Bookmark icon" id = 'js-header-form-submit-image'>
+            </button>
+            <select name="" id="js-header-form-select">
+                <option value="0" selected= 'selected'>Filter By</option>
+                <option value="5">5 star</option>
+                <option value="4">4 star</option>
+                <option value="3">3 star</option>
+                <option value="2">2 star</option>
+                <option value="1">1 star</option>
+            </select>
+        </form>
+    </header>
+    <main>
+        <form id = 'js-creating-new'> 
+        </form>
+        <ul id = 'js-bookmark-list'>
+        </ul>  
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type='module' src= 'index.js'></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(39, 39, 39);
+    width:50%;
+    margin:0 auto;
+}
+
+#js-header-form-submit, #js-header-form-select, #js-new-rating{
+    height: 50px;
+    background-color: rgb(58, 58, 58);
+    line-height: 50px;
+}
+
+#js-header-form-submit-image {
+    height: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    border:solid brown 1px;
+    padding: 10px;
+}
+
+li {
+    border:solid white 1px;
+    margin: 0 auto 10px auto;
+}
+
+.trashcan-img {
+    height: 20px;
+}
+
+h2 {
+    display: inline-block;
+}
+
+label {
+    display:block;
+}
+
+textarea {
+    display:block;
+    margin: 0 auto;
+}
+
+button {
+    background-color: rgb(58, 58, 58);
+}
+
+#js-creating-new input, #js-creating-new textarea{
+    color: black;
+}
