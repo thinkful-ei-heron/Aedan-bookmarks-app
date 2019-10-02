@@ -16,6 +16,16 @@ const postBookmark = function(json) {
     });
 };
 
+const patchBookmark = function(id, obj) {
+    return fetchWrapper(`${BASE_URL}/${id}`, {
+        'method': 'PATCH',
+        'headers': {
+            'Content-Type': 'application/json'
+        },
+        'body': obj
+    });
+};
+
 const deleteBookmark = function(id) {
     return fetchWrapper(`${BASE_URL}/${id}`, {
         'method': 'DELETE',
@@ -49,4 +59,5 @@ export default {
     getBookmarks,
     postBookmark,
     deleteBookmark,
+    patchBookmark
 };

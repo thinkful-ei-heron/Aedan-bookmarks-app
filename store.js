@@ -1,22 +1,5 @@
 const STORE = {
-    bookmarks : [
-        {
-            id: 'x56w',
-            title: 'Title 1',
-            rating: 3,
-            url: 'http://www.title1.com',
-            desc: 'lorem ipsum dolor sit',
-            expanded: false
-        },
-        {
-            id: '6ffw',
-            title: 'Title 2',
-            rating: 5,
-            url: 'http://www.title2.com',
-            desc: 'dolorum tempore deserunt',
-            expanded: true
-        }
-    ],
+    bookmarks : [],
     adding: false,
     filter: 0,
     error: null
@@ -26,11 +9,20 @@ const getBookmarks = function() {
     return this.STORE.bookmarks;
 };
 
+const addBookmark = function(obj) {
+    if(obj.desc === null) {
+        obj.desc = '';
+    }
+    obj.expanded = false;
+    this.STORE.bookmarks.push(obj);
+};
+
+const deleteBookmark = function(id) {
+    this.STORE.bookmarks = this.STORE.bookmarks.filter(itemInArray => itemInArray.id !== id);
+};
+
 const refreshBookmarks = function(arrayBookmarks) {
     for(let i = 0; i< arrayBookmarks.length; i++) {
-        if (arrayBookmarks[i].rating === null) {
-            arrayBookmarks[i].rating = 0;
-        }
         if(arrayBookmarks[i].desc === null) {
             arrayBookmarks[i].desc = '';
         }
@@ -46,22 +38,14 @@ const refreshBookmarks = function(arrayBookmarks) {
     }
 };
 
-const deleteBookmark = function(id) {
-    let index = findIndex(id);
-    this.STORE.bookmarks.splice(index, 1);
-};
-
 const findById = function(id) {
     return STORE.bookmarks.find(obj => obj.id === id);
 };
 
-const findIndex = function(id) {
+const editBookmark = function(id, obj) {
     let item = findById(id);
-    let index = STORE.bookmarks.findIndex(arrayItem => arrayItem === item);
-    return index;
+    Object.assign(item, obj);
 };
-
-//editBookmark?
 
 const toggleExpanded =  function(id) {
     let item = findById(id);
@@ -94,4 +78,6 @@ export default {
     setError,
     setFilter,
     toggleExpanded,
+    addBookmark,
+    editBookmark
 };

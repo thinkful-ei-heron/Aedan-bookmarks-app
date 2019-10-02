@@ -11,7 +11,11 @@
     <header>
         <h1>My Bookmarks</h1>
         <form id = 'js-header-form'>
-            <button type="submit" id = 'js-header-form-submit'>+ New <img src="https://www.materialui.co/materialIcons/action/bookmark_white_192x192.png" alt="Bookmark icon" id = 'js-header-form-submit-image'>
+            <button type="submit" id = 'js-header-form-submit'>
+                <div id = 'new-bookmark-container'>
+                    <span>+ New Bookmark</span>
+                    <img src="./images/bookmark.png" alt="Bookmark icon" id = 'js-header-form-submit-image'>
+                </div>
             </button>
             <select name="" id="js-header-form-select">
                 <option value="0" selected= 'selected'>Filter By</option>
@@ -24,10 +28,6 @@
         </form>
     </header>
     <main>
-        <form id = 'js-creating-new'> 
-        </form>
-        <ul id = 'js-bookmark-list'>
-        </ul>  
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type='module' src= 'index.js'></script>

@@ -4,7 +4,7 @@ import bookmark from './bookmarkApp.js';
 
 
 function main() {
-    bookmark.render();
+    bookmark.renderInitial();
     bookmark.handleEventHandlers();
 }
 
